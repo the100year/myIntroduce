@@ -1,0 +1,818 @@
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+body p {
+    font-family: 'GmarketSansMedium';
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 0 30px;
+    z-index: 99;
+}
+
+.inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+.logo a {
+    align-items: center;
+    font-size: 30px;
+    height: 100px;
+    font-weight: bold;
+    color: #000;
+}
+
+.header_menu {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.header_btn {
+    width: 100%;
+    position: relative;
+    top: 10px;
+    transition: .3s ease-in-out;
+}
+
+.header_btn>span {
+    display: block;
+    margin: 5.5px 0;
+    height: 2px;
+    background: currentColor;
+    transform: .2s ease-in-out;
+    opacity: .2s ease-in-out;
+}
+
+.header_btn.open .line:first-child {
+    transform: rotate(45deg) translateX(10%);
+    width: 100%;
+    top: 11.5px;
+}
+
+.header_btn.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.header_btn.open .line:nth-child(3) {
+    transform: rotate(-45deg) translateX(10%);
+    width: 100%;
+    position: relative;
+    bottom: 11.5px;
+}
+
+
+.header_btn>span:nth-child(1) {
+    width: 50%;
+}
+
+.header_btn>span:nth-child(2) {
+    width: 100%;
+}
+
+.header_btn>span:nth-child(3) {
+    width: 50%;
+    text-align: right;
+    transform: translateX(100%);
+}
+
+.header_btn:hover>span:nth-child(1) {
+    text-align: right;
+    transform: translateX(100%);
+    transition-duration: 0.5s;
+}
+
+.header_btn:hover>span:nth-child(3) {
+    text-align: left;
+    transform: translateX(0);
+    transition-duration: 0.5s;
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.header_main_menu {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    z-index: 999;
+    transition: 0.5s ease-in-out;
+    padding-bottom: 50px;
+
+}
+
+.header_main_menu_list {
+    display: flex;
+    justify-content: end;
+    gap: 3em;
+    overflow: hidden;
+}
+
+.header_main_menu_list>li>a {
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+.main_fix {
+    position: relative;
+    overflow: hidden;
+    z-index: 98;
+}
+
+.fix {
+    pointer-events: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+    ;
+}
+
+.left1 {
+    left: 30px;
+    top: 50%;
+    transform: rotate(-90deg) translateX(-50%);
+    transform-origin: top left;
+    position: fixed;
+    line-height: 1;
+}
+
+.left2 {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    line-height: 1;
+}
+
+.right1 {
+    right: 30px;
+    top: 50%;
+    transform: rotate(-90deg) translateX(50%);
+    transform-origin: top right;
+    position: fixed;
+    line-height: 1;
+}
+
+#main_bg {
+    background: #68acFF;
+    border-radius: 20px;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 11vw;
+    position: relative;
+    background-attachment: fixed;
+    background-size: 160%;
+
+
+}
+
+.main_inner {
+    padding: 0.7vw;
+}
+
+.main_inner_title {
+    position: relative;
+    padding-bottom: 7%;
+    margin-top: 15%;
+    margin-left: 5%;
+}
+
+.text1 {
+    font-size: 8vw;
+    color: #f8f8ff;
+    display: flex;
+    width: max-content;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.text2 {
+    font-size: 10vw;
+    color: #000;
+    display: block;
+    width: max-content;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.smile {
+    background-image: url(./img/sm.png);
+    background-size: cover;
+    width: 10vw;
+    height: 17.5vh;
+    display: block;
+    position: relative;
+    left: 10%;
+}
+
+
+.outer {
+    width: 100%;
+    margin-bottom: 11vw;
+}
+
+.inner_work {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.festsuri {
+    display: flex;
+    border-top: 1px solid #73737380;
+    gap: 2vw;
+}
+
+.vivi {
+    width: 55vw;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 34px 0;
+}
+
+.inner_work>h2 {
+    color: #0500e8;
+}
+
+.rmf {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    height: 100%;
+    padding: 1.25rem 0;
+}
+
+.rmf h1 {
+    color: #0500e8;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.rmf p {
+    color: #0500e8;
+    font-size: 0.8rem;
+    font-weight: 550;
+}
+
+.festsuri_right_down {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+.f_tag {
+    padding-top: 50px;
+}
+
+.f_vi {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 2s ease, transform 0.8s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.f_vi.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.KwangJu_point {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 2s ease, transform 0.8s ease;
+}
+
+.KwangJu_point.show1 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.dokdo_img {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 2s ease, transform 0.8s ease;
+}
+
+.dokdo_img.show2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.k_vi {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: opacity 2s ease, transform 0.8s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.k_vi.show3 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.festsuri_right_down_tag>p:first-child {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 0.1;
+}
+
+.g_tag {
+    padding-top: 30px;
+}
+
+.s_tag {
+    padding-top: 140px;
+}
+
+.k_tag {
+    padding-top: 120px;
+}
+
+.one1 {
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    background-color: #0500e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.one2 {
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    background-color: #0500e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.one3 {
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    background-color: #0500e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 105px;
+}
+
+.one4 {
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    background-color: #0500e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+}
+
+.arrow {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+
+.view {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+
+.dokdo_img {
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/bg_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dokdo_img>img {
+    height: 55px;
+}
+
+.dokdo_img h3 {
+    font-size: 20px;
+    position: relative;
+    color: #444;
+}
+
+.dokdo_img h3::before {
+    content: ' "경상북도 울릉읍 독도리 1-96" ';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+    animation: typing 7s steps(31) alternate infinite;
+    border-right: 1px solid#fff;
+}
+
+@keyframes typing {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 110%;
+    }
+}
+
+.KwangJu_point {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.KwangJu_point>li {
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    background-size: cover;
+}
+
+.point1 {
+    background-image: url(/img/이걸루.png);
+}
+
+.point2 {
+    background-image: url(/img/이걸루1.png);
+}
+
+.point3 {
+    background-image: url(/img/이걸루2.png);
+}
+
+.f_hover:hover h1 {
+    color: #7ecbfc;
+}
+
+.f_hover:hover p {
+    color: #7ecbfc;
+}
+
+.f_hover:hover aside {
+    background-color: #7ecbfc;
+}
+
+.g_hover:hover h1 {
+    color: #7ecbfc;
+}
+
+.g_hover:hover p {
+    color: #7ecbfc;
+}
+
+.g_hover:hover aside {
+    background-color: #7ecbfc;
+}
+
+.s_hover:hover h1 {
+    color: #7ecbfc;
+}
+
+.s_hover:hover p {
+    color: #7ecbfc;
+}
+
+.s_hover:hover aside {
+    background-color: #7ecbfc;
+}
+
+.k_hover:hover h1 {
+    color: #7ecbfc;
+}
+
+.k_hover:hover p {
+    color: #7ecbfc;
+}
+
+.k_hover:hover aside {
+    background-color: #7ecbfc;
+}
+
+
+.who {
+    width: 100%;
+    margin-bottom: 11vw;
+}
+
+.inner_who {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.who_intro {
+    border-top: 1px solid #73737380;
+    padding-top: 15px;
+}
+
+.inner_who>h2 {
+    color: #0500e8;
+}
+
+.who_intro_sp {
+    position: relative;
+    width: 84%;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.who_intro_sp>span {
+    display: block;
+    margin-bottom: 2rem;
+    transform: translateY(70%);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    font-size: 1.3vw;
+}
+
+.who_intro_sp>span.sh {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0s
+}
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.f_line {
+    border-left: 3px dotted #444;
+    width: 1px;
+    height: 58vh;
+    position: absolute;
+    top: 0;
+    left: 85%;
+    z-index: 9999;
+}
+
+.f_blue {
+    background-color: #0500e8;
+    border-radius: 25px 25px 0 0;
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f_fly {
+    background-image: url(./img/ap.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 8%;
+    height: 20%;
+    position: absolute;
+    left: 5%;
+}
+
+.f_blue>h2 {
+    margin: 0 auto;
+    display: block;
+    color: #fff;
+    position: relative;
+    font-size: 3vw;
+}
+
+.f_white {
+    width: 100%;
+    height: 40vh;
+    border: 1px solid #73737380;
+    display: flex;
+    align-items: center;
+}
+
+.f_white_left {
+    width: 70%;
+}
+
+.f_white_left>ul {
+    display: flex;
+}
+
+.f_white_left>ul>li {
+    font-weight: bold;
+    display: flex;
+    font-size: 1.2vw
+}
+
+.f_white_left>ul>li>span:nth-child(1) {
+    color: #73737380;
+    display: block;
+    width: 8vw;
+}
+
+.left_1>li>span:nth-child(2),
+.left_2>li>span:nth-child(2) {
+    width: 11vw;
+}
+
+.f_white_right {
+    background-image: url(./img/bar.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 8%;
+    height: 90%;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    .smile {
+        display: none;
+    }
+
+    .f_fly {
+        display: none;
+    }
+
+    .main_inner_title {
+        margin-left: 3%;
+        margin-top: 50%;
+    }
+
+    .text1 {
+        font-size: 6vw;
+    }
+
+    .text2 {
+        font-size: 8vw;
+    }
+
+    .festsuri {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .vivi {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .rmf {
+        width: 80%;
+    }
+
+    .festsuri_right_down {
+        padding-top: 10px;
+        width: 100%;
+        display: flex;
+    }
+
+    .rmf {
+        width: 100%;
+    }
+
+    .f_white {
+        height: 30vh;
+        display: flex;
+    }
+
+    .left_1 {
+        flex-direction: column;
+    }
+
+    .left_2 {
+        flex-direction: column;
+    }
+
+    .f_blue {
+        height: 8.5vh;
+    }
+
+    .f_line {
+        height: 38.5vh;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 10px;
+    }
+
+    .fix span {
+        font-size: 0.5rem;
+        ;
+    }
+
+    .smile {
+        display: none;
+    }
+    .f_line {
+        height: 28.5vh;
+    }
+
+    .f_white {
+        height: 20vh;
+    }
+    .left1,
+    .right1,
+    .left2 {
+        font-size: 0.7rem;
+    }
+
+    .text1,
+    .text2 {
+        font-size: 8vw;
+    }
+
+    .who_intro_sp span {
+        font-size: 0.8rem;
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+
+
+
+    .text1 {
+        font-size: 10vw;
+    }
+
+    .text2 {
+        font-size: 12vw;
+    }
+
+    .who_intro_sp span {
+        font-size: 0.7rem;
+    }
+
+    .dokdo_img h3 {
+        font-size: 1.2rem;
+    }
+}
