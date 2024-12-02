@@ -151,6 +151,14 @@ function scroll() {
             item.classList.remove("show2");
         }
     });
+    document.querySelectorAll(".k_img").forEach(item => {
+        if (scrollTop > item.offsetTop - window.innerHeight) {
+            item.classList.add("show4");
+        }
+        if (scrollTop < item.offsetTop - window.innerHeight) {
+            item.classList.remove("show4");
+        }
+    });
     document.querySelectorAll(".k_vi").forEach(item => {
         if (scrollTop > item.offsetTop - window.innerHeight) {
             item.classList.add("show3");
